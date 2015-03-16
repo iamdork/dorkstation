@@ -1,5 +1,10 @@
 # DO[cker-fo]RK workspace template
 
+## Create password for project on public host
+```
+sudo htpasswd -c /etc/nginx/.htpasswd-[project] [username]
+```
+
 ## VMWare provider troubleshooting:
 ```
 vagrant up --provider vmware_fusion
