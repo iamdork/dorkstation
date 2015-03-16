@@ -4,7 +4,12 @@
 VAGRANT_API_VERSION = "2"
 
 Vagrant.configure(VAGRANT_API_VERSION) do |config|
-  config.vm.box = "chef/centos-7.0"
+  config.vm.box = "boxcutter/centos70"
+  config.vm.hostname = "dev.local"
+
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.include_offline = true
 
   config.vm.provision "shell" do |s|
     s.path = 'setup.sh'
