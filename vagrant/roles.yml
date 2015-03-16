@@ -1,0 +1,14 @@
+# Roles required by dork itself. Don't touch.
+- src: geerlingguy.repo-epel
+- src: https://github.com/iamdork/dork.host
+- src: https://github.com/iamdork/dork.shell
+- src: https://github.com/iamdork/dork.supervisord
+
+# Roles used to setup dorks.
+- src: https://github.com/iamdork/dork.nginx
+- src: https://github.com/iamdork/dork.php
+- src: https://github.com/iamdork/dork.mariadb
+- src: https://github.com/iamdork/dork.solr
+- src: https://github.com/iamdork/dork.drupal
+- src: https://github.com/iamdork/dork.drupal_root
+- src: https://github.com/iamdork/dork.drupal_profile
