@@ -2,3 +2,14 @@
   roles:
   - dork.shell
   - dork.host
+
+  tasks:
+
+  # add servers to internal /etc/ansible/hosts
+  - name: add servers to internal /etc/ansible/hosts 
+    lineinfile:
+      line: "{{ item }}"
+      state: present
+      dest: /etc/ansible/hosts
+    with_lines: 
+    - cat /vagrant/servers.ini

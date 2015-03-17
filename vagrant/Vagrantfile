@@ -18,6 +18,7 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
   config.ssh.forward_agent = true
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
+  config.vm.synced_folder '../playbooks', "/opt/playbooks"
   config.vm.synced_folder '../roles', "/opt/roles"
   config.vm.synced_folder '../source', "/var/source"
   config.vm.synced_folder '../build', "/var/build"

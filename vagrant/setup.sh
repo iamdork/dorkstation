@@ -20,5 +20,19 @@ else
   yum install git -y
 fi
 
+if [ -f /etc/ansible/hosts ]; then
+  echo "/etc/ansible/hosts already exists - skipping"
+else
+  mkdir -p /etc/ansible
+  touch /etc/ansible/hosts
+fi
+
+if grep -F "[workstation]" /etc/ansible/hosts > /dev/null; then
+  echo "dork already in ansible hosts - skipping"
+else
+  echo "Modifying /etc/ansible/hosts"
+  echo -e "[workstation]\nlocalhost ansible_connection=local dork_user=vagrant\n" >> /etc/ansible/hosts
+fi
+
 ansible-galaxy install --no-deps --force --role-file=/vagrant/roles.yml --roles-path=/etc/ansible/roles
-ANSIBLE_ROLES_PATH=/etc/ansible/roles:/opt/roles ansible-playbook -i /vagrant/inventory.ini /vagrant/workstation.yml
+ANSIBLE_ROLES_PATH=/etc/ansible/roles:/opt/roles ansible-playbook /vagrant/workstation.yml
