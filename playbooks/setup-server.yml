@@ -21,8 +21,25 @@
   # Synchronize custom ansible roles and playbooks
   - synchronize:
       src: /opt/{{ item }}/
-      dest: /opt/{{ items }}
+      dest: /opt/{{ item }}
       recursive: yes
+      delete: yes
     with_items:
     - roles
     - playbooks
+
+  # Synchronize authorized keys
+  - file:
+      path: /home/{{ dork_user }}/.ssh/authorized_keys.d
+      state: directory
+
+  - synchronize:
+      src: authorized_keys.d/
+      dest: /home/{{ dork_user }}/.ssh/authorized_keys.d/
+      delete: yes
+    register: keys
+
+  - shell: cat /home/{{ dork_user }}/.ssh/authorized_keys.d/*.pub > /home/{{ dork_user }}/.ssh/authorized_keys
+    when: keys.changed
+
+  - include: setup-server-custom.yml
