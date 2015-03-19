@@ -6,10 +6,17 @@
   tasks:
 
   # Install 3rd party ansible roles
+  - stat:
+      path: /vagrant
+    register: vagrant
+    delegate_to: 127.0.0.1
+    changed_when: vagrant.stat.exists
+
   - copy:
       src: /vagrant/roles.yml
       dest: /etc/ansible/roles.yml
     register: roles
+    when: vagrant.changed
 
   - shell: > 
       ansible-galaxy install
@@ -24,6 +31,7 @@
       dest: /opt/{{ item }}
       recursive: yes
       delete: yes
+    when: vagrant.changed
     with_items:
     - roles
     - playbooks
