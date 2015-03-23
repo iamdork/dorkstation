@@ -3,6 +3,8 @@
 - src: https://github.com/iamdork/dork.host
 - src: https://github.com/iamdork/dork.shell
 - src: https://github.com/iamdork/dork.supervisord
+- src: https://github.com/iamdork/dork.workstation
+- src: https://github.com/iamdork/dork.server
 
 # Roles used to setup dorks.
 - src: https://github.com/iamdork/dork.nginx
@@ -12,3 +14,6 @@
 - src: https://github.com/iamdork/dork.drupal
 - src: https://github.com/iamdork/dork.drupal_root
 - src: https://github.com/iamdork/dork.drupal_profile
+
+# Teamcity agent role
+- src: https://github.com/iamdork/dork.teamcity_agent
