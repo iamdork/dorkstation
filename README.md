@@ -1,18 +1,17 @@
 # DO[cker-fo]RK workspace template
 
-## Create password for project on public host
+## Start/Update a project
 ```
-sudo htpasswd -c /etc/nginx/.htpasswd-[project] [username]
-```
-
-## VMWare provider troubleshooting:
-```
-vagrant up --provider vmware_fusion
-
-… Waiting for HGFS …
-
-yum install perl -y
-/usr/bin/vmware-config-tools.pl -d
+dork-clone https://github.com/myaccount/myproject.git master /var/source/myproject
 ```
 
+## Run an arbitrary ansible playbook on a dork
+```
+cd /var/source/myproject
+dork-play /path/to/my/playbook.yml --extra-vars="whatever ..."  --tags "idontknow"
+```
 
+## Create password for a project
+```
+sudo ansible-playbook /opt/playbooks/project-password.yml
+```
