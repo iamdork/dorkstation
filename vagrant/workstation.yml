@@ -1,3 +1,4 @@
 - hosts: workstation
   roles:
+  - dork.shell
   - dork.workstation
