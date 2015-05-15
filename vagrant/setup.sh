@@ -21,4 +21,4 @@ else
 fi
 
 #ansible-galaxy install --no-deps --force --role-file=/vagrant/roles.yml --roles-path=/etc/ansible/roles
-ANSIBLE_ROLES_PATH=/etc/ansible/roles:/opt/roles ansible-playbook -i /vagrant/workstation.ini /vagrant/workstation.yml
+ANSIBLE_ROLES_PATH=/etc/ansible/roles:/opt/roles ansible-playbook -i /vagrant/inventory.ini /vagrant/setup.yml --limit workstation

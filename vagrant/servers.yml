@@ -1,4 +1,0 @@
-- hosts: server
-  roles:
-  - dork.shell
-  - dork.server

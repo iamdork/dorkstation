@@ -1,24 +1,22 @@
 # Roles required by dork itself. Don't touch.
 - src: geerlingguy.repo-epel
 - src: https://github.com/iamdork/dork.host
-- src: https://github.com/iamdork/dork.ssh
 - src: https://github.com/iamdork/dork.workstation
 - src: https://github.com/iamdork/dork.server
 
+# Host services. Add to workstation.yml or setup.yml as required.
+- src: https://github.com/iamdork/dork.teamcity_agent
+- src: https://github.com/iamdork/dork.logstash
+
 # Roles used to setup dorks.
-- src: https://github.com/iamdork/dork.shell
 - src: https://github.com/iamdork/dork.nginx
 - src: https://github.com/iamdork/dork.php
 - src: https://github.com/iamdork/dork.mariadb
 - src: https://github.com/iamdork/dork.solr
 - src: https://github.com/iamdork/dork.drupal
-- src: https://github.com/iamdork/dork.drupal_root
-- src: https://github.com/iamdork/dork.drupal_profile
 - src: https://github.com/iamdork/dork.hooks
-- src: https://github.com/iamdork/dork.logstash_forwarder
 - src: https://github.com/iamdork/dork.cron
 - src: https://github.com/iamdork/dork.syslog
-
-# Host services. Include what you need.
-- src: https://github.com/iamdork/dork.teamcity_agent
-- src: https://github.com/iamdork/dork.logstash
+- src: https://github.com/iamdork/dork.shell
+- src: https://github.com/iamdork/dork.admin
+- src: https://github.com/iamdork/dork.logstash_forwarder
