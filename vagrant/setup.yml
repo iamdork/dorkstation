@@ -6,4 +6,4 @@
 
 - hosts: server
   roles:
-  - { role: dork.server, dork_restrict_access: true }
+  - { role: dork.server, host_restrict_access: True }
