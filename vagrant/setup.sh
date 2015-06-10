@@ -18,8 +18,7 @@ if [ -d /etc/ansible/hosts.d ]; then
   echo "/etc/ansible/hosts.d already exists - skipping"
 else
   mkdir -p /etc/ansible/hosts.d
-  printf "[workstation]\nlocalhost ansible_connection=local ansible_sudo=yes\n" > /etc/ansible/hosts.d/self.ini
-  cat /etc/ansible/hosts.d/*.ini > /etc/ansible/hosts
+  printf "[workstation]\nlocalhost ansible_connection=local ansible_sudo=yes\n" > /etc/ansible/hosts.d/self
 fi
 
 if which git >/dev/null; then
@@ -29,4 +28,4 @@ else
 fi
 
 ansible-galaxy install --no-deps --force --role-file=/vagrant/roles.yml --roles-path=/etc/ansible/roles
-ANSIBLE_ROLES_PATH=/etc/ansible/roles:/opt/roles ansible-playbook /vagrant/setup.yml --limit workstation
+ANSIBLE_ROLES_PATH=/etc/ansible/roles:/opt/roles ansible-playbook -i /etc/ansible/hosts.d /vagrant/setup.yml --limit workstation
