@@ -18,7 +18,7 @@ if [ -d /etc/ansible/hosts.d ]; then
   echo "/etc/ansible/hosts.d already exists - skipping"
 else
   mkdir -p /etc/ansible/hosts.d
-  printf "[workstation]\nlocalhost ansible_connection=local\n" > /etc/ansible/hosts.d/self.ini
+  printf "[workstation]\nlocalhost ansible_connection=local ansible_sudo=yes\n" > /etc/ansible/hosts.d/self.ini
   cat /etc/ansible/hosts.d/*.ini > /etc/ansible/hosts
 fi
 
