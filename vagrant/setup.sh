@@ -28,5 +28,5 @@ else
   yum install git -y
 fi
 
-#ansible-galaxy install --no-deps --force --role-file=/vagrant/roles.yml --roles-path=/etc/ansible/roles
+ansible-galaxy install --no-deps --force --role-file=/vagrant/roles.yml --roles-path=/etc/ansible/roles
 ANSIBLE_ROLES_PATH=/etc/ansible/roles:/opt/roles ansible-playbook /vagrant/setup.yml --limit workstation
