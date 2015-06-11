@@ -1,0 +1,3 @@
+- hosts: dork-host
+  roles:
+  - { role: dork.server, host_restrict_access: True }

@@ -3,7 +3,3 @@
   - dork.workstation
   - { role: dork.admin, admin_name: vagrant }
   - { role: dork.shell, shell_user: vagrant, shell_zsh_theme: Soliah }
-
-- hosts: server
-  roles:
-  - { role: dork.server, host_restrict_access: True }
