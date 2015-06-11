@@ -1,5 +1,9 @@
 - hosts: workstation
   roles:
   - dork.workstation
+  # - dork.host
+  # Uncomment the following line, if you want to use the dorkstation as
+  # development environment.
   - { role: dork.admin, admin_name: vagrant }
   - { role: dork.shell, shell_user: vagrant, shell_zsh_theme: Soliah }
+  - { role: dork.shell, shell_user: root, shell_zsh_theme: mrtazz }
