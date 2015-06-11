@@ -1,14 +1,15 @@
 # Roles required by dork itself. Don't touch.
 - src: geerlingguy.repo-epel
+- src: https://github.com/iamdork/dork.remote
 - src: https://github.com/iamdork/dork.host
 - src: https://github.com/iamdork/dork.workstation
 - src: https://github.com/iamdork/dork.server
 
-# Host services. Add to workstation.yml or setup.yml as required.
+# Host services. May be applied to dork hosts or workstations.
 - src: https://github.com/iamdork/dork.teamcity_agent
 - src: https://github.com/iamdork/dork.logstash
 
-# Roles used to setup dorks.
+# Roles that may be applied on dorks.
 - src: https://github.com/iamdork/dork.nginx
 - src: https://github.com/iamdork/dork.php
 - src: https://github.com/iamdork/dork.mariadb
