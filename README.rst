@@ -21,7 +21,7 @@ Sounds awesome, how do I get started?
 -------------------------------------
 
 First install Vagrant_ and either VirtualBox or VMWare providers. Then clone and
-setup the vagrant box.
+setup the vagrant box::
 
     git clone https://github.com/iamdork/dorkstation.git dorkstation
     cd dorkstation/vagrant
