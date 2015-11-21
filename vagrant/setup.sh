@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if which gcc >/dev/null; then
+  echo "gcc already installed - skipping"
+else
+  yum install gcc -y
+fi
+
 if which pip >/dev/null; then
   echo "python-pip already installed - skipping"
 else

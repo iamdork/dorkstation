@@ -22,3 +22,4 @@
 - src: https://github.com/iamdork/dork.admin
 - src: https://github.com/iamdork/dork.logstash_forwarder
 - src: https://github.com/iamdork/dork.hotlink
+- src: https://github.com/iamdork/dork.elk

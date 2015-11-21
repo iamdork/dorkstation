@@ -4,16 +4,14 @@
 VAGRANT_API_VERSION = "2"
 
 Vagrant.configure(VAGRANT_API_VERSION) do |config|
-  config.vm.box = "boxcutter/centos70"
+  config.vm.box = "boxcutter/centos71"
   config.vm.hostname = "dev.local"
-
-  config.hostmanager.enabled = true
-  config.hostmanager.manage_host = true
-  config.hostmanager.include_offline = true
 
   config.vm.provision "shell" do |s|
     s.path = 'setup.sh'
   end
+
+  config.vm.network "private_network", ip: "192.168.0.99"
 
   config.ssh.forward_agent = true
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
