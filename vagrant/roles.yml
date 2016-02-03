@@ -24,3 +24,5 @@
 - src: https://github.com/iamdork/dork.hotlink
 - src: https://github.com/iamdork/dork.elk
 - src: https://github.com/iamdork/dork.fabricator
+- src: https://github.com/iamdork/dork.phpmyadmin
+- src: https://github.com/iamdork/dork.sendmail
